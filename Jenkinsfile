@@ -20,6 +20,8 @@ pipeline {
     stage('Test') {
       steps {
          sh 'npm test'
+        echo  $GOOGLE_PROJECT_ID > /tmp/CI_PIPELINE_ID.json
+        cat  /tmp/CI_PIPELINE_ID.json
       }
     }      
   }
